@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">DotaScreen</string>
+    <string name="game_name">Dota 2</string>
+    <string name="game_description">Dota 2 is a multiplayer online battle arena (MOBA) game which
+        has two teams of five players compete to collectively destroy a large structure defended by
+        the opposing team known as the "Ancient", whilst defending their own.</string>
+    <string name="rating_header">Review &#38; Ratings</string>
+    <string name="install_button">Install</string>
 </resources>
