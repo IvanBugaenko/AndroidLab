@@ -4,14 +4,12 @@ package com.example.dotascreen.ui.dotascreen
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -29,7 +27,7 @@ import androidx.compose.ui.unit.dp
 import com.example.dotascreen.R
 import com.example.dotascreen.ui.theme.AppTheme
 
-//все вместе должно быть
+
 @Composable
 fun DotaScreenHeader(
     modifier: Modifier = Modifier
@@ -38,7 +36,35 @@ fun DotaScreenHeader(
         painter = painterResource(R.drawable.dota_main),
         modifier = modifier
     ) {
-
+        Box(
+            modifier = modifier.padding(start = 24.dp, top = 274.dp)
+        ) {
+            Row {
+                DotaLogo()
+                Column(modifier = modifier.padding(start = 12.dp, top = 34.dp)) {
+                    Text(
+                        text = stringResource(R.string.game_name),
+                        style = AppTheme.TextStyle.Bold_20,
+                        color = AppTheme.TextColors.HeaderTextColor
+                    )
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        modifier = modifier.padding(top = 6.dp)
+                    ) {
+                        Image(
+                            painter = painterResource(R.drawable.stars),
+                            contentDescription = "Rate of Dota 2",
+                            modifier = modifier
+                                .padding(end = 10.dp)
+                                .height(12.dp)
+                                .fillMaxHeight(),
+                            contentScale = ContentScale.Crop
+                        )
+                        Text(text = stringResource(R.string.number_of_ratings), style = AppTheme.TextStyle.Regular_12, color = AppTheme.TextColors.DateTextColor)
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -49,43 +75,34 @@ private fun HeaderBackground(
     content: @Composable () -> Unit
 ) {
     Box(modifier = modifier) {
-        Column(
-            verticalArrangement = Arrangement.spacedBy(-15.dp)
-        ) {
-            Image(painter = painter, contentDescription = "Preview of Dota 2", modifier = modifier.fillMaxSize().heightIn(300.dp, 350.dp), contentScale = ContentScale.Crop)
-            DotaLogo()
-        }
+        Image(
+            painter = painter,
+            contentDescription = "Preview of Dota 2",
+            modifier = modifier
+                .fillMaxSize()
+                .height(294.dp),
+            contentScale = ContentScale.Crop
+        )
+        content()
+    }
+}
+
+@Composable
+private fun DotaLogo(modifier: Modifier = Modifier) {
+    Box(modifier = modifier
+        .size(88.dp)
+        .clip(RoundedCornerShape(12.dp))
+        .border(2.dp, AppTheme.IconColors.BorderColor, shape = RoundedCornerShape(12.dp))
+        .background(AppTheme.BgColors.IconBackgroundColor)
+        .padding(17.dp),
+        contentAlignment = Alignment.Center
+    ) {
+        Image(painter = painterResource(R.drawable.logo), contentDescription = "Logo of Dota 2", modifier = modifier.fillMaxSize(), contentScale = ContentScale.Crop)
     }
 }
 
 @Preview
 @Composable
-private fun DotaLogo() {
-    Row(
-        verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.spacedBy(17.dp),
-        modifier = Modifier.padding(25.dp, 0.dp, 0.dp, 0.dp)
-    ) {
-        Box(modifier = Modifier
-            .size(90.dp)
-            .clip(RoundedCornerShape(17.dp))
-            .border(1.dp, AppTheme.IconColors.BorderColor, shape = RoundedCornerShape(17.dp))
-            .background(AppTheme.IconColors.IconBackgroundColor)
-            .padding(17.dp),
-            contentAlignment = Alignment.Center
-        ) {
-            Image(painter = painterResource(R.drawable.logo), contentDescription = "Logo of Dota 2", modifier = Modifier.fillMaxSize(), contentScale = ContentScale.Crop)
-        }
-
-        Column (verticalArrangement = Arrangement.spacedBy(7.dp),) {
-            Text(text = stringResource(R.string.game_name), style = AppTheme.TextStyle.Bold_20, color = AppTheme.TextColors.HeaderTextColor)
-            Row (
-                verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.spacedBy(7.dp)
-            ) {
-                Image(painter = painterResource(R.drawable.stars), contentDescription = "Rate of Dota 2", modifier = Modifier.height(12.dp).fillMaxHeight(), contentScale = ContentScale.Crop)
-                Text(text = "70м", style = AppTheme.TextStyle.Regular_12, color = AppTheme.TextColors.DateTextColor)
-            }
-        }
-    }
+fun DotaLogoPreview() {
+    DotaLogo()
 }

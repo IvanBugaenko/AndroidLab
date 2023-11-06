@@ -11,25 +11,23 @@ import androidx.compose.ui.text.style.LineHeightStyle
 
 
 object AppTheme {
+
     object BgColors {
         val BgColor
             @Composable
             get() = Color(0xFF050B18)
-    }
-    object IconColors {
         val IconBackgroundColor
             @Composable
             get() = Color.Black
-
-        val BorderColor
-            @Composable
-            get() = Color(0xFF1F2430)
-    }
-
-    object ButtonColors {
         val ButtonColor
             @Composable
             get() = Color(0xFFF4D144)
+    }
+
+    object IconColors {
+        val BorderColor
+            @Composable
+            get() = Color(0xFF1F2430)
     }
 
     object TextColors {
@@ -54,6 +52,7 @@ object AppTheme {
     }
 
     object TextStyle {
+
         val Bold_48
             @Composable
             get() =
@@ -93,7 +92,37 @@ object AppTheme {
                         LineHeightStyle.Trim.None
                     )
                 )
+
+        val Regular_12_19
+            @Composable
+            get() =
+                TextStyle(
+                    fontFamily = FontFamily,
+                    fontWeight = FontWeight.Normal,
+                    fontSize = 12.sp,
+                    lineHeight = 19.sp,
+                    platformStyle = PlatformTextStyle(includeFontPadding = false),
+                    lineHeightStyle = LineHeightStyle(
+                        LineHeightStyle.Alignment.Proportional,
+                        LineHeightStyle.Trim.None
+                    )
+                )
+        val Regular_12_20
+            @Composable
+            get() =
+                TextStyle(
+                    fontFamily = FontFamily,
+                    fontWeight = FontWeight.Normal,
+                    fontSize = 12.sp,
+                    lineHeight = 20.sp,
+                    platformStyle = PlatformTextStyle(includeFontPadding = false),
+                    lineHeightStyle = LineHeightStyle(
+                        LineHeightStyle.Alignment.Proportional,
+                        LineHeightStyle.Trim.None
+                    )
+                )
         val Regular_12
+            @Composable
             get() =
                 TextStyle(
                     fontFamily = FontFamily,
@@ -106,6 +135,7 @@ object AppTheme {
                     )
                 )
         val Regular_16
+            @Composable
             get() =
                 TextStyle(
                     fontFamily = FontFamily,
@@ -118,11 +148,27 @@ object AppTheme {
                     )
                 )
         val Regular_10
+            @Composable
             get() =
                 TextStyle(
                     fontFamily = FontFamily,
                     fontWeight = FontWeight.Normal,
                     fontSize = 10.sp,
+                    platformStyle = PlatformTextStyle(includeFontPadding = false),
+                    lineHeightStyle = LineHeightStyle(
+                        LineHeightStyle.Alignment.Proportional,
+                        LineHeightStyle.Trim.None
+                    )
+                )
+
+        val Medium_10_12
+            @Composable
+            get() =
+                TextStyle(
+                    fontFamily = FontFamily,
+                    fontWeight = FontWeight.Medium,
+                    fontSize = 10.sp,
+                    lineHeight = 12.sp,
                     platformStyle = PlatformTextStyle(includeFontPadding = false),
                     lineHeightStyle = LineHeightStyle(
                         LineHeightStyle.Alignment.Proportional,
