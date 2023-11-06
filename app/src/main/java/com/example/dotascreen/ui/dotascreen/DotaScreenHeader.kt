@@ -10,21 +10,16 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.draw.shadow
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.painter.ColorPainter
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
@@ -34,7 +29,7 @@ import androidx.compose.ui.unit.dp
 import com.example.dotascreen.R
 import com.example.dotascreen.ui.theme.AppTheme
 
-
+//все вместе должно быть
 @Composable
 fun DotaScreenHeader(
     modifier: Modifier = Modifier
@@ -54,8 +49,12 @@ private fun HeaderBackground(
     content: @Composable () -> Unit
 ) {
     Box(modifier = modifier) {
-        Image(painter = painter, contentDescription = "Preview of Dota 2", modifier = modifier.fillMaxSize(), contentScale = ContentScale.Crop)
-        DotaLogo()
+        Column(
+            verticalArrangement = Arrangement.spacedBy(-15.dp)
+        ) {
+            Image(painter = painter, contentDescription = "Preview of Dota 2", modifier = modifier.fillMaxSize().heightIn(300.dp, 350.dp), contentScale = ContentScale.Crop)
+            DotaLogo()
+        }
     }
 }
 
@@ -64,12 +63,13 @@ private fun HeaderBackground(
 private fun DotaLogo() {
     Row(
         verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.spacedBy(17.dp)
+        horizontalArrangement = Arrangement.spacedBy(17.dp),
+        modifier = Modifier.padding(25.dp, 0.dp, 0.dp, 0.dp)
     ) {
         Box(modifier = Modifier
             .size(90.dp)
             .clip(RoundedCornerShape(17.dp))
-            .border(2.dp, AppTheme.IconColors.BorderColor, shape = RoundedCornerShape(17.dp))
+            .border(1.dp, AppTheme.IconColors.BorderColor, shape = RoundedCornerShape(17.dp))
             .background(AppTheme.IconColors.IconBackgroundColor)
             .padding(17.dp),
             contentAlignment = Alignment.Center
@@ -77,7 +77,7 @@ private fun DotaLogo() {
             Image(painter = painterResource(R.drawable.logo), contentDescription = "Logo of Dota 2", modifier = Modifier.fillMaxSize(), contentScale = ContentScale.Crop)
         }
 
-        Column {
+        Column (verticalArrangement = Arrangement.spacedBy(7.dp),) {
             Text(text = stringResource(R.string.game_name), style = AppTheme.TextStyle.Bold_20, color = AppTheme.TextColors.HeaderTextColor)
             Row (
                 verticalAlignment = Alignment.CenterVertically,
