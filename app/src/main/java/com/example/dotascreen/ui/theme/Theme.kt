@@ -19,12 +19,18 @@ object AppTheme {
         val IconBackgroundColor
             @Composable
             get() = Color.Black
-        val ButtonBackgroundColor
+        val InstallButtonBackgroundColor
             @Composable
             get() = Color(0xFFF4D144)
         val ChipBackgroundColor
             @Composable
             get() = Color(0x3D44A9F4)
+        val PlayButtonBackgroundColor
+            @Composable
+            get() = Color(0x3DFFFFFF)
+        val PlayIconBackgroundColor
+            @Composable
+            get() = Color.White
     }
 
     object IconColors {
@@ -168,7 +174,7 @@ object AppTheme {
             @Composable
             get() =
                 TextStyle(
-                    fontFamily = FontFamilyModernist,
+                    fontFamily = FontFamilyMontserrat,
                     fontWeight = FontWeight.Medium,
                     fontSize = 10.sp,
                     lineHeight = 12.sp,

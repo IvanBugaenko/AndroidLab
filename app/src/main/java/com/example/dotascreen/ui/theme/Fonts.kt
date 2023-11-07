@@ -11,3 +11,7 @@ internal val FontFamilyModernist = FontFamily(
     Font(R.font.sk_modernist_mono_font, weight = FontWeight.Medium),
     Font(R.font.sk_modernist_bold_font, weight = FontWeight.Bold),
 )
+
+internal val FontFamilyMontserrat = FontFamily(
+    Font(R.font.monntserrat_medium_font, weight = FontWeight.Medium),
+)
