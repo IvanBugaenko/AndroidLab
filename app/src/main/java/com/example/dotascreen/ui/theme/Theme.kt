@@ -19,9 +19,12 @@ object AppTheme {
         val IconBackgroundColor
             @Composable
             get() = Color.Black
-        val ButtonColor
+        val ButtonBackgroundColor
             @Composable
             get() = Color(0xFFF4D144)
+        val ChipBackgroundColor
+            @Composable
+            get() = Color(0x3D44A9F4)
     }
 
     object IconColors {
@@ -46,7 +49,7 @@ object AppTheme {
         val CommentTextColor
             @Composable
             get() = Color(0xFFA8ADB7)
-        val GameCategoryTextColor
+        val ChipTextColor
             @Composable
             get() = Color(0xFF41A0E7)
     }
@@ -57,7 +60,7 @@ object AppTheme {
             @Composable
             get() =
                 TextStyle(
-                    fontFamily = FontFamily,
+                    fontFamily = FontFamilyModernist,
                     fontWeight = FontWeight.Bold,
                     fontSize = 48.sp,
                     platformStyle = PlatformTextStyle(includeFontPadding = false),
@@ -70,7 +73,7 @@ object AppTheme {
             @Composable
             get() =
                 TextStyle(
-                    fontFamily = FontFamily,
+                    fontFamily = FontFamilyModernist,
                     fontWeight = FontWeight.Bold,
                     fontSize = 20.sp,
                     platformStyle = PlatformTextStyle(includeFontPadding = false),
@@ -83,7 +86,7 @@ object AppTheme {
             @Composable
             get() =
                 TextStyle(
-                    fontFamily = FontFamily,
+                    fontFamily = FontFamilyModernist,
                     fontWeight = FontWeight.Bold,
                     fontSize = 16.sp,
                     platformStyle = PlatformTextStyle(includeFontPadding = false),
@@ -97,7 +100,7 @@ object AppTheme {
             @Composable
             get() =
                 TextStyle(
-                    fontFamily = FontFamily,
+                    fontFamily = FontFamilyModernist,
                     fontWeight = FontWeight.Normal,
                     fontSize = 12.sp,
                     lineHeight = 19.sp,
@@ -111,7 +114,7 @@ object AppTheme {
             @Composable
             get() =
                 TextStyle(
-                    fontFamily = FontFamily,
+                    fontFamily = FontFamilyModernist,
                     fontWeight = FontWeight.Normal,
                     fontSize = 12.sp,
                     lineHeight = 20.sp,
@@ -125,7 +128,7 @@ object AppTheme {
             @Composable
             get() =
                 TextStyle(
-                    fontFamily = FontFamily,
+                    fontFamily = FontFamilyModernist,
                     fontWeight = FontWeight.Normal,
                     fontSize = 12.sp,
                     platformStyle = PlatformTextStyle(includeFontPadding = false),
@@ -138,7 +141,7 @@ object AppTheme {
             @Composable
             get() =
                 TextStyle(
-                    fontFamily = FontFamily,
+                    fontFamily = FontFamilyModernist,
                     fontWeight = FontWeight.Normal,
                     fontSize = 16.sp,
                     platformStyle = PlatformTextStyle(includeFontPadding = false),
@@ -151,7 +154,7 @@ object AppTheme {
             @Composable
             get() =
                 TextStyle(
-                    fontFamily = FontFamily,
+                    fontFamily = FontFamilyModernist,
                     fontWeight = FontWeight.Normal,
                     fontSize = 10.sp,
                     platformStyle = PlatformTextStyle(includeFontPadding = false),
@@ -165,7 +168,7 @@ object AppTheme {
             @Composable
             get() =
                 TextStyle(
-                    fontFamily = FontFamily,
+                    fontFamily = FontFamilyModernist,
                     fontWeight = FontWeight.Medium,
                     fontSize = 10.sp,
                     lineHeight = 12.sp,

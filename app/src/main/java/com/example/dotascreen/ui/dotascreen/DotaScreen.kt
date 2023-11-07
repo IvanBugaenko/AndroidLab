@@ -6,8 +6,10 @@ import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.dotascreen.R
+import com.example.dotascreen.mock.MockObjects
 
 
 @Composable
@@ -24,15 +26,25 @@ fun DotaScreen() {
             DotaScreenHeader()
         }
         item {
-            DotaDescription()
+            ScrollingChipsRow(MockObjects.ChipTextList)
         }
         item {
-            VideoPreview(
-                previewResList = listOf(
-                    R.drawable.gameplay1,
-                    R.drawable.gameplay2,
-                ), contentPadding = PaddingValues(start = 24.dp, end = 24.dp)
-            )
+            DotaDescription()
         }
+
+//        item {
+//            VideoPreview(
+//                previewResList = listOf(
+//                    R.drawable.gameplay1,
+//                    R.drawable.gameplay2,
+//                ), contentPadding = PaddingValues(start = 24.dp, end = 24.dp)
+//            )
+//        }
     }
+}
+
+@Preview
+@Composable
+fun DotaScreenPreview() {
+    DotaScreen()
 }

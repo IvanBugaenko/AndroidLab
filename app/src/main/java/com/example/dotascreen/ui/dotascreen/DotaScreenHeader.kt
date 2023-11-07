@@ -37,7 +37,7 @@ fun DotaScreenHeader(
         modifier = modifier
     ) {
         Box(
-            modifier = modifier.padding(start = 24.dp, top = 274.dp)
+            modifier = modifier.padding(start = 24.dp, top = 274.dp, bottom = 0.dp, end = 0.dp)
         ) {
             Row {
                 DotaLogo()

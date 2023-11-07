@@ -17,7 +17,7 @@ fun DotaDescription(modifier: Modifier = Modifier) {
         text = stringResource(R.string.game_description),
         style = AppTheme.TextStyle.Regular_12_19,
         color = AppTheme.TextColors.DescriptionTextColor,
-        modifier = modifier.padding(24.dp, 14.dp, 24.dp, 14.dp)
+        modifier = modifier.padding(start = 24.dp, top = 24.dp, bottom = 0.dp, end = 24.dp)
     )
 }
 
