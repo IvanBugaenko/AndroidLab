@@ -60,4 +60,4 @@
 
 ## Ссылка на apk
 
-<a ref="https://drive.google.com/file/d/1HK3vQfYcBfOrF9RRXmsXhgNWCdD6u_Mj/view?usp=sharing">Ссылка на скачивание</a>
+[Ссылка на скачивание](https://drive.google.com/file/d/1HK3vQfYcBfOrF9RRXmsXhgNWCdD6u_Mj/view?usp=sharing)
