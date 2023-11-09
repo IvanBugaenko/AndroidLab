@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="rating_header">Отзывы &#38; Рейтинг</string>
+    <string name="game_description">Dota 2 — это многопользовательская онлайн-игра на
+        боевой арене (MOBA), в которой две команды по пять игроков соревнуются, чтобы коллективно
+        разрушить большую структуру, защищаемую противостоящей командой, известной как «Древний»,
+        одновременно защищая свою собственную.</string>
+    <string name="install_button">Скачать</string>
+    <string name="number_of_reviews">70M Оценок</string>
+</resources>
