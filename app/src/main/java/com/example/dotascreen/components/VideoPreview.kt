@@ -1,11 +1,12 @@
-package com.example.dotascreen.ui.dotascreen
+package com.example.dotascreen.components
+
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
@@ -31,16 +32,21 @@ import com.example.dotascreen.ui.theme.AppTheme
 @Composable
 fun VideoPreviewRow(
     videos : List<Int>,
+    contentPadding: PaddingValues,
     modifier: Modifier = Modifier
 ) {
     val lazyListState = rememberLazyListState()
     LazyRow(
         state = lazyListState,
         horizontalArrangement = Arrangement.spacedBy(15.dp),
-        modifier = modifier.padding(start = 24.dp, top = 24.dp, bottom = 0.dp, end = 24.dp)
+        modifier = modifier,
+        contentPadding = contentPadding
     ) {
         items(videos) {
-                video -> Video(video)
+            video -> Video(
+                video = video,
+                modifier = Modifier.size(240.dp, 128.dp)
+            )
         }
     }
 }
@@ -51,14 +57,14 @@ fun Video(
     modifier: Modifier = Modifier
 ) {
     Box(
-        modifier = modifier.size(240.dp, 128.dp),
+        modifier = modifier,
         contentAlignment = Alignment.Center
     ) {
         Image(
             painter = painterResource(video),
             contentDescription = "Gameplay video of Dota 2",
             contentScale = ContentScale.Crop,
-            modifier = modifier
+            modifier = Modifier
                 .fillMaxSize()
                 .clip(RoundedCornerShape(12.dp))
         )
@@ -71,13 +77,16 @@ fun PlayButton(
     modifier: Modifier = Modifier
 ) {
     Box(
+        contentAlignment = Alignment.Center,
         modifier = modifier
-            .clip(CircleShape)
-            .blur(1.5.dp)
-            .size(48.dp)
-            .background(AppTheme.BgColors.PlayButtonBackgroundColor),
-        contentAlignment = Alignment.Center
     ) {
+        Box(
+            modifier = Modifier
+                .clip(CircleShape)
+                .blur(1.5.dp)
+                .size(48.dp)
+                .background(AppTheme.BgColors.PlayButtonBackgroundColor)
+        )
         Icon(
             imageVector = Icons.Rounded.PlayArrow,
             contentDescription = "Play icon",
@@ -89,5 +98,11 @@ fun PlayButton(
 @Preview
 @Composable
 fun ScrollingVideoRowPreview() {
-    VideoPreviewRow(MockObjects.VideoList)
+    VideoPreviewRow(
+        videos = MockObjects.videoList,
+        contentPadding = PaddingValues(
+            start = 24.dp,
+            end = 24.dp
+        )
+    )
 }

@@ -1,9 +1,10 @@
 package com.example.dotascreen
 
+
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import com.example.dotascreen.ui.dotascreen.MainScreen
+import com.example.dotascreen.ui.MainScreen
 import androidx.activity.enableEdgeToEdge
 
 

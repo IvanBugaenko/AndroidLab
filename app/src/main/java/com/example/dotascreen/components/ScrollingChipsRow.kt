@@ -1,4 +1,5 @@
-package com.example.dotascreen.ui.dotascreen
+package com.example.dotascreen.components
+
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -27,10 +28,19 @@ fun ScrollingChipsRow(
     LazyRow(
         state = lazyListState,
         horizontalArrangement = Arrangement.spacedBy(10.dp),
-        modifier = modifier.padding(start = 24.dp, top = 16.dp, bottom = 0.dp, end = 0.dp)
+        modifier = modifier
     ) {
         items(texts) {
-            text -> Chip(text)
+            text -> Chip(
+                text = text,
+                modifier = Modifier
+                    .clip(RoundedCornerShape(12.dp))
+                    .background(AppTheme.BgColors.ChipBackgroundColor)
+                    .padding(
+                        horizontal = 10.dp,
+                        vertical = 5.dp
+                    )
+            )
         }
     }
 }
@@ -42,9 +52,6 @@ fun Chip(
 ) {
     Box(
         modifier = modifier
-            .clip(RoundedCornerShape(12.dp))
-            .background(AppTheme.BgColors.ChipBackgroundColor)
-            .padding(horizontal = 10.dp, vertical = 5.dp)
     ) {
         Text(
             text = text,
@@ -57,5 +64,5 @@ fun Chip(
 @Preview
 @Composable
 fun ScrollingChipsRowPreview() {
-    ScrollingChipsRow(MockObjects.ChipTextList)
+    ScrollingChipsRow(MockObjects.chipTextList)
 }

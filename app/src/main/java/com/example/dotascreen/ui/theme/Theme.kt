@@ -27,10 +27,13 @@ object AppTheme {
             get() = Color(0x3D44A9F4)
         val PlayButtonBackgroundColor
             @Composable
-            get() = Color(0x3DFFFFFF)
+            get() = Color(0x99ACABAB)
         val PlayIconBackgroundColor
             @Composable
             get() = Color.White
+        val DividerBackgroundColor
+            @Composable
+            get() = Color(0xFF1A1F29)
     }
 
     object IconColors {

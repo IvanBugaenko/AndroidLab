@@ -1,8 +1,6 @@
-package com.example.dotascreen.ui.dotascreen
+package com.example.dotascreen.components
 
 
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
@@ -17,6 +15,7 @@ import androidx.compose.ui.unit.dp
 import com.example.dotascreen.R
 import com.example.dotascreen.ui.theme.AppTheme
 
+
 @Composable
 fun InstallButton(
     modifier: Modifier = Modifier,
@@ -30,13 +29,6 @@ fun InstallButton(
             contentColor = AppTheme.TextColors.ButtonTextColor
         ),
         modifier = modifier
-            .fillMaxWidth()
-            .padding(
-                start = 24.dp,
-                end = 24.dp,
-                top = 24.dp,
-                bottom = 38.dp,
-            )
     ) {
         Text(
             text = stringResource(R.string.install_button),
